@@ -1,0 +1,308 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Add box-sizing for consistent sizing */
+  }
+  
+  /* Fixed Header */
+  .fixed {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Header Container (Top Bar) */
+  .header_container {
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: #1a1a1a;
+    height: 60px;
+    gap: 10px;
+    padding: 0 15px; /* Add some padding on the sides */
+  }
+  
+  /* Logo Section */
+  .logo_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Removed max-width to allow better scaling on smaller screens */
+  }
+  
+  .logo_container img {
+    width: 100px; /* Set a fixed width for the logo */
+    min-width: 80px; /* Ensure it doesn't get too small */
+    padding-top: 5px;
+    vertical-align: middle;
+  }
+  
+  /* Delivery Information */
+  .delivery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    font-weight: bold;
+    padding: 5px;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  .delivery p {
+    font-size: 10px;
+  }
+  
+  /* Search Bar */
+  .search {
+    display: flex;
+    align-items: center;
+    border-radius: 5px; /* Slightly smaller border-radius */
+    overflow: hidden;
+    width: 100%;
+    flex: 1; /* Allows it to take up available space */
+    background-color: white; /* Give search bar a background */
+  }
+  
+  .search select,
+  .search input {
+    font-weight: bold;
+    padding: 8px 10px; /* Adjust padding */
+    outline: none; /* Remove default outline */
+    border: none; /* Remove default border */
+  }
+  
+  .search select {
+    border-right: 1px solid #ccc; /* Separator for select */
+    background-color: #f3f3f3; /* Light background for select */
+    cursor: pointer;
+  }
+  
+  .search input {
+    width: 100%;
+    padding-left: 10px;
+  }
+  
+  .search svg {
+    padding: 7px;
+    background-color: #febd69;
+    color: #1a1a1a;
+    cursor: pointer;
+    height: 100%; /* Make icon fill the height */
+    display: flex;
+    align-items: center;
+  }
+  
+  .search svg:hover {
+    background-color: #d49644;
+  }
+  
+  .search:focus-within {
+    border: 2px solid orange; /* Highlight on focus */
+  }
+  
+  /* Order Container (Right Side Links) */
+  .order_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap; /* Prevent items from wrapping */
+  }
+  
+  .order_container a {
+    text-decoration: none;
+    color: white;
+    padding: 5px; /* Add padding for clickable area */
+    border-radius: 3px; /* Add border-radius for hover effect */
+  }
+  
+  .order_container p {
+    font-size: 10px;
+  }
+  
+  /* Language Selector */
+  .language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .language select {
+    background-color: #1a1a1a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    -webkit-appearance: none; /* Remove default select arrow for better styling */
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 15px; /* Space for custom arrow if you add one */
+  }
+  
+  .language img {
+    width: 20px; /* Adjust flag size */
+  }
+  
+  /* Cart Icon */
+  .cart {
+    position: relative;
+    display: flex; /* Use flex to align icon and count */
+    align-items: flex-end; /* Align count at the bottom of the icon */
+    padding-bottom: 5px; /* Space for the number */
+  }
+  
+  .cart span {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px; /* Adjust font size */
+    color: orange;
+    top: 5px; /* Position relative to the icon */
+    left: 20px; /* Position relative to the icon */
+    background-color: transparent; /* Make background transparent */
+  }
+  
+  /* Hover Effects */
+  .order_container a:hover,
+  .delivery:hover,
+  .logo_container a:hover,
+  .lower_container ul li:hover {
+    border: 1px solid white;
+    border-radius: 3px;
+  }
+  
+  /* Lower Header */
+  .lower_container {
+    background-color: #232F3E !important;
+    color: white;
+    padding: 0 15px; /* Add padding consistent with upper header */
+  }
+  
+  .lower_container ul {
+    display: flex;
+    list-style: none;
+    gap: 15px; /* Increase gap for better spacing */
+    padding: 8px 0; /* Vertical padding */
+  }
+  
+  .lower_container ul li {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .lower_container ul li:first-child {
+    display: flex;
+    gap: 5px; /* Adjust gap */
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  /* --- Media Queries --- */
+  
+  /* Small devices (phones, 576px and down) */
+  @media screen and (max-width: 768px) {
+    .header_container {
+      flex-wrap: wrap; /* Allow items to wrap to the next line */
+      height: auto; /* Adjust height based on content */
+      padding: 10px;
+      justify-content: space-between; /* Space out items */
+    }
+  
+    .logo_container {
+      order: 1; /* Control order of elements */
+      flex-grow: 0;
+      margin-right: 10px;
+    }
+  
+    .logo_container img {
+      width: 90px;
+    }
+  
+    .delivery {
+      order: 2;
+      font-size: 12px;
+      margin-left: auto; /* Push to the right */
+    }
+  
+    .search {
+      order: 3;
+      width: 100%; /* Full width search bar */
+      margin-top: 10px; /* Space from elements above */
+    }
+  
+    .order_container {
+      order: 4;
+      width: 100%;
+      justify-content: space-around; /* Distribute items evenly */
+      margin-top: 10px;
+    }
+  
+    .order_container a {
+      padding: 0; /* Remove padding to save space */
+    }
+  
+    .language {
+      display: none; /* Hide language selector on small screens */
+    }
+  
+    .lower_container ul {
+      overflow-x: auto; /* Enable horizontal scrolling */
+      white-space: nowrap; /* Keep items in one line */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      justify-content: flex-start; /* Align items to the start */
+      padding-left: 10px; /* Add some padding */
+    }
+  
+    .lower_container ul li {
+      flex-shrink: 0; /* Prevent items from shrinking */
+    }
+  
+    .lower_container ul li:not(:first-child) {
+      /* You can choose to show fewer items or none based on design */
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  /* Medium devices (tablets, 768px to 1024px) */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .header_container {
+      padding: 0 10px;
+    }
+  
+    .logo_container img {
+      width: 80px;
+    }
+  
+    .search input {
+      font-size: 14px;
+    }
+  
+    .order_container {
+      gap: 8px;
+    }
+  
+    .order_container p {
+      font-size: 9px;
+    }
+  
+    .language img {
+      width: 18px;
+    }
+  
+    .cart span {
+      font-size: 14px;
+      left: 18px;
+    }
+  
+    .lower_container ul {
+      gap: 10px;
+    }
+  
+    .lower_container ul li p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Large devices (desktops, 1025px and up) - Current styles are largely for this */
+  @media screen and (min-width: 1025px) {
+    /* No specific changes needed here unless you want to optimize for very large screens */
+  }
