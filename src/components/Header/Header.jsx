@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import classes from './header.module.css';
+import classes from './Header.module.css';
 import { Link } from 'react-router-dom';
 import { SlLocationPin } from 'react-icons/sl';
 import { BsSearch } from 'react-icons/bs';
