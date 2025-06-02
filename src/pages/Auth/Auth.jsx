@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { DataContext } from "../../components/DataProvider/DataProvider";
-import classes from "./Signup.module.css";
+import classes from "./SignUp.module.css";
 import { ClipLoader } from "react-spinners";
 
 const Type = {
