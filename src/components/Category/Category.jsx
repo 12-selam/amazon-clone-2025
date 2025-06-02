@@ -2,7 +2,7 @@
 import React from "react";
 import { categoryInfos} from "./CategoryFulllnfos";
 import CategoryCard from "./CategoryCard";
-import styles from "./category.module.css";
+import styles from "./Category.module.css";
 
 
 function Category() {
